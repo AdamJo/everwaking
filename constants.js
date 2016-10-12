@@ -3,7 +3,7 @@ const root = require('./helpers.js').root
 
 exports.HOST = 'localhost';
 exports.DEV_PORT = 3000;
-exports.PROD_PORT = 8088;
+exports.PROD_PORT = 8080;
 
 
 /**

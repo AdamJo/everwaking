@@ -51,14 +51,13 @@ const CONSTANTS = {
 const clientConfig = function webpackConfig() {
   let config: any = (<any>Object).assign({});
   config.cache = true;
-  PROD ? config.devtool = PROD_SOURCE_MAPS : config.devtool = DEV_SOURCE_MAPS;
+  PROD ? config.devtool = '' : config.devtool = DEV_SOURCE_MAPS;
 
   config.module = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'source-map-loader',
-        exclude: [EXCLUDE_SOURCE_MAPS]
+        loader: 'source-map-loader'
       },
       {
         test: /\.ts$/,
@@ -77,7 +76,8 @@ const clientConfig = function webpackConfig() {
   config.plugins = [
     new ExtractTextPlugin('stylesheets/[name].css'),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      inject: true
     }),
     new ProgressPlugin(),
     new ForkCheckerPlugin(),
@@ -91,13 +91,12 @@ const clientConfig = function webpackConfig() {
       new UglifyJsPlugin({
         beautify: false,
         comments: false
-      }),
-      ...MY_CLIENT_PRODUCTION_PLUGINS
-    );
+      }))
   }
-    config.entry = {
-      main: './src/scripts/main'
-    };
+
+  config.entry = {
+    main: './src/scripts/main'
+  };
 
   config.output = {
     path: root('/dist'),
@@ -108,7 +107,7 @@ const clientConfig = function webpackConfig() {
     contentBase: './src',
     port: CONSTANTS.PORT,
     historyApiFallback: true,
-    host: '0.0.0.0',
+    host: 'localhost',
     watchOptions: DEV_SERVER_WATCH_OPTIONS
   };
 
