@@ -48,6 +48,8 @@ const CONSTANTS = {
   PORT: PORT
 };
 
+console.log(EVENT.toUpperCase(), `\nStarting on ${HOST}:${PORT}\n`);
+
 const clientConfig = function webpackConfig() {
   let config: any = (<any>Object).assign({});
   config.cache = true;
@@ -76,6 +78,7 @@ const clientConfig = function webpackConfig() {
   config.plugins = [
     new ExtractTextPlugin('stylesheets/[name].css'),
     new HtmlWebpackPlugin({
+      title: 'Everwaking',
       template: './src/index.html',
       inject: true
     }),
@@ -99,7 +102,7 @@ const clientConfig = function webpackConfig() {
   };
 
   config.output = {
-    path: root('/dist'),
+    path: root('/docs'),
     filename: 'bundle.js'
   };
 
