@@ -77,6 +77,7 @@ const clientConfig = function webpackConfig() {
 
   config.plugins = [
     new ExtractTextPlugin('stylesheets/[name].css'),
+    new CopyWebpackPlugin([{from: 'src/assets/', to: '.', flatten: true}]),
     new HtmlWebpackPlugin({
       title: 'Everwaking',
       template: './src/index.html',

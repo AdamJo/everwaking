@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:prod",
-    "build:prod": "npm run clean:docs && webpack",
-    "clean:docs": "npm run rimraf -- docs .awcache",
+    "build:prod": "npm run clean:dist && webpack",
+    "clean:dist": "npm run rimraf -- dist .awcache",
     "prodserver": "node prodserver",
     "start": "npm run start:dev",
     "start:dev": "npm run webdev",
@@ -14,7 +14,7 @@
     "server:prod": "npm-run-all -p -r watch:prod prodserver",
     "rimraf": "rimraf",
     "webdev": "webpack-dev-server",
-    "webpack": "npm run clean:docs && webpack",
+    "webpack": "npm run clean:dist && webpack",
     "watch:prod": "npm run build:prod -- --watch"
   },
   "author": "Adam Johannesmeyer <adamj0101@gmail.com>",
