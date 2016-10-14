@@ -26,6 +26,39 @@ exports.DEV_SERVER_WATCH_OPTIONS = {
   ignored: /node_modules/
 }
 
+/**
+ * this should come in handy eventually right?
+ */
+exports.MY_FAVICONS = {
+  link: [
+    // <link> tags for 'apple-touch-icon' (AKA Web Clips).
+    { rel: 'apple-touch-icon', sizes: '60x60', href: 'apple-icon-60x60.png' },
+    { rel: 'apple-touch-icon', sizes: '76x76', href: 'apple-icon-76x76.png' },
+    { rel: 'apple-touch-icon', sizes: '120x120', href: 'apple-icon-120x120.png' },
+    { rel: 'apple-touch-icon', sizes: '152x152', href: 'apple-icon-152x152.png' },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: 'apple-icon-180x180.png' },
+
+    // <link> tags for android web app icons
+    { rel: 'icon', type: 'image/png', sizes: '192x192', href: 'android-chrome-192x192.png' },
+    { rel: 'icon', type: 'image/png', sizes: '512x512', href: 'android-chrome-512x512.png' },
+
+    // <link> tags for favicons
+    { rel: 'icon', type: 'image/png', sizes: '16x16', href: 'favicon-16x16.png' },
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: 'favicon-32x32.png' },
+
+    // <link> tags for a Web App Manifest
+    { rel: 'manifest', href: 'manifest.json' },
+    
+    { rel: "mask-icon", href:"/safari-pinned-tab.svg", color:"#5bbad5" }
+  ],
+  meta: [
+    { name: 'msapplication-TileColor', content: '#FFFFFF' },
+    { name: 'msapplication-TileImage', content: 'ms-icon-144x144.png', '=content': true },
+    { name: 'theme-color', content: '#FFFFFF' }
+  ]
+};
+
+
 exports.EXCLUDE_SOURCE_MAPS = [
   // these packages have problems with their sourcemaps
 ]
@@ -34,6 +67,8 @@ exports.MY_COPY_FOLDERS = [
   // use this for folders you want to be copied in to Client dist
   // src/assets and index.html are already copied by default.
   // format is { from: 'folder_name', to: 'folder_name' }
+  { from: 'src/assets/icons', to: '.', flatten: true},
+  { from: 'src/dist_root', to: '.', flatten: true }
 ]
 
 exports.MY_CLIENT_PLUGINS = [
