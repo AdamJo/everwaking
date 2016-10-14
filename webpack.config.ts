@@ -102,7 +102,7 @@ const clientConfig = function webpackConfig() {
   };
 
   config.output = {
-    path: root('/docs'),
+    path: root('/dist'),
     filename: 'bundle.js'
   };
 

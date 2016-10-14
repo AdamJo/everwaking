@@ -3,5 +3,8 @@
 /bower_components
 npm-debug.log
 
+/dist
+firebase.json
+.firebaserc
 yarn.lock
 .awcache
