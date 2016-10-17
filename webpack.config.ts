@@ -10,7 +10,7 @@ import {
   DEV_PORT, PROD_PORT, EXCLUDE_SOURCE_MAPS, HOST,
   USE_DEV_SERVER_PROXY, DEV_SERVER_PROXY_CONFIG, DEV_SERVER_WATCH_OPTIONS,
   DEV_SOURCE_MAPS, PROD_SOURCE_MAPS, MY_COPY_FOLDERS,
-  MY_CLIENT_PLUGINS, MY_CLIENT_PRODUCTION_PLUGINS, MY_CLIENT_RULES
+  MY_CLIENT_PLUGINS, MY_CLIENT_PRODUCTION_PLUGINS, MY_CLIENT_RULES, MY_JADE_VARIABLES
 } from './constants';
 
 const {
@@ -72,6 +72,15 @@ const clientConfig = function webpackConfig() {
         exclude: /node-modules/,
         loader: ExtractTextPlugin.extract({loader: `css?minimize!sass`, fallbackLoader: 'style'})
       },
+      {
+        test:/\.pug$/,
+        exclude: ['/node_modules/'],
+        loader: 'pug-loader',
+        query: {
+          data: MY_JADE_VARIABLES,
+          pretty: PROD ? false : true,
+        }
+      }
     ]
   };
 
@@ -79,9 +88,8 @@ const clientConfig = function webpackConfig() {
     new ExtractTextPlugin('stylesheets/[name].css'),
     new CopyWebpackPlugin(MY_COPY_FOLDERS),
     new HtmlWebpackPlugin({
-      title: 'Everwaking',
-      template: './src/index.html',
-      inject: true
+      template: './src/index.pug',
+      inject: true,
     }),
     new ProgressPlugin(),
     new ForkCheckerPlugin(),
@@ -96,6 +104,8 @@ const clientConfig = function webpackConfig() {
         beautify: false,
         comments: false
       }))
+  } else {
+    // dev only stuff
   }
 
   config.entry = {

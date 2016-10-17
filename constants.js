@@ -90,3 +90,7 @@ exports.MY_TEST_RULES = [
 exports.MY_TEST_PLUGINS = [
   // use this to import your own Test webpack config plugins.
 ]
+
+exports.MY_JADE_VARIABLES = {
+  title:'Everwaking',
+}
