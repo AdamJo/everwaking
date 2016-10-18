@@ -59,17 +59,19 @@ const clientConfig = function webpackConfig() {
     rules: [
       {
         test: /\.js$/,
+        exclude: ['/node_modules/'],
         loader: 'source-map-loader'
       },
       {
         test: /\.ts$/,
+        exclude: ['/node_modules/'],
         loaders: [
           'awesome-typescript-loader'
         ]
       },
       {
         test: /\.scss$/,
-        exclude: /node-modules/,
+        exclude: ['/node_modules/'],
         loader: ExtractTextPlugin.extract({loader: `css?minimize!sass`, fallbackLoader: 'style'})
       },
       {
