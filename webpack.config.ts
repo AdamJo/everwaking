@@ -79,7 +79,6 @@ const clientConfig = function webpackConfig() {
         exclude: ['/node_modules/'],
         loader: 'pug-loader',
         query: {
-          data: MY_JADE_VARIABLES,
           pretty: PROD ? false : true,
         }
       }
@@ -90,6 +89,7 @@ const clientConfig = function webpackConfig() {
     new ExtractTextPlugin('stylesheets/[name].css'),
     new CopyWebpackPlugin(MY_COPY_FOLDERS),
     new HtmlWebpackPlugin({
+      data: MY_JADE_VARIABLES,
       template: './src/index.pug',
       inject: true,
     }),
