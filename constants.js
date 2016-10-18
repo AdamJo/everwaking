@@ -94,6 +94,8 @@ exports.MY_TEST_PLUGINS = [
 exports.MY_JADE_VARIABLES = {
   title:'Everwaking',
   link: [
+    { rel: 'shortcut icon', href: "favicon.ico"},
+
     // <link> tags for 'apple-touch-icon' (AKA Web Clips).
     { rel: 'apple-touch-icon', sizes: '60x60', href: 'apple-icon-60x60.png' },
     { rel: 'apple-touch-icon', sizes: '76x76', href: 'apple-icon-76x76.png' },
@@ -115,8 +117,12 @@ exports.MY_JADE_VARIABLES = {
     { rel: "mask-icon", href:"/safari-pinned-tab.svg", color:"#5bbad5" }
   ],
   meta: [
-    { name: 'msapplication-TileColor', content: '#FFFFFF' },
+    { name: 'msapplication-TileColor', content: '#ffffff' },
     { name: 'msapplication-TileImage', content: 'ms-icon-144x144.png', '=content': true },
-    { name: 'theme-color', content: '#FFFFFF' }
+    { name: 'theme-color', content: '#ffffff' },
+    { name: "application-name", content: "everwaking" },
+    { name: "apple-mobile-web-app-capable", content: "yes" },
+    { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+    { name: "apple-mobile-web-app-title", content: "everwaking" }
   ]
 }

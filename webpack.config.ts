@@ -91,7 +91,7 @@ const clientConfig = function webpackConfig() {
     new HtmlWebpackPlugin({
       data: MY_JADE_VARIABLES,
       template: './src/index.pug',
-      inject: true,
+      inject: true
     }),
     new ProgressPlugin(),
     new ForkCheckerPlugin(),
@@ -104,10 +104,16 @@ const clientConfig = function webpackConfig() {
       new NoErrorsPlugin(),
       new UglifyJsPlugin({
         beautify: false,
-        comments: false
-      }))
+        comments: false,
+        warnings: false,
+        compressor: {
+          screw_ie8: true,
+          warnings: false,
+        }
+      })
+    )
   } else {
-    // dev only stuff
+    // dev only
   }
 
   config.entry = {
