@@ -1,2 +1,2 @@
-require('./nav/nav.scss');
-require('./nav/nav.ts');
+import './nav/nav.scss';
+import './nav/nav.ts';

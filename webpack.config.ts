@@ -10,7 +10,7 @@ import {
   DEV_PORT, PROD_PORT, EXCLUDE_SOURCE_MAPS, HOST,
   USE_DEV_SERVER_PROXY, DEV_SERVER_PROXY_CONFIG, DEV_SERVER_WATCH_OPTIONS,
   DEV_SOURCE_MAPS, PROD_SOURCE_MAPS, MY_COPY_FOLDERS,
-  MY_CLIENT_PLUGINS, MY_CLIENT_PRODUCTION_PLUGINS, MY_CLIENT_RULES, MY_JADE_VARIABLES
+  MY_CLIENT_PLUGINS, MY_CLIENT_PRODUCTION_PLUGINS, MY_CLIENT_RULES, MY_PUG_VARIABLES
 } from './constants';
 
 const {
@@ -58,11 +58,6 @@ const clientConfig = function webpackConfig() {
   config.module = {
     rules: [
       {
-        test: /\.js$/,
-        exclude: ['/node_modules/'],
-        loader: 'source-map-loader'
-      },
-      {
         test: /\.ts$/,
         exclude: ['/node_modules/'],
         loaders: [
@@ -89,7 +84,7 @@ const clientConfig = function webpackConfig() {
     new ExtractTextPlugin('stylesheets/[name].css'),
     new CopyWebpackPlugin(MY_COPY_FOLDERS),
     new HtmlWebpackPlugin({
-      data: MY_JADE_VARIABLES,
+      data: MY_PUG_VARIABLES,
       template: './src/index.pug',
       inject: true
     }),
