@@ -20,7 +20,7 @@ const {
   NoErrorsPlugin
 } = require('webpack');
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { ForkCheckerPlugin } = require('awesome-typescript-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');

@@ -20,7 +20,7 @@
     "watch:dev": "npm-run-all -p -r \"build:dev -- --watch\"",
     "watch:prod": "npm run build:prod -- --watch"
   },
-  "author": "Adam Johannesmeyer <adamj0101@gmail.com>",
+  "author": "Adam Johannesmeyer <adam.johannesmeyer@gmail.com>",
   "license": "ISC",
   "repository": {
     "url": "https://github.com/AdamJo/everwaking.git",

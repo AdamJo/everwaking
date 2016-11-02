@@ -35,7 +35,7 @@ exports.MY_COPY_FOLDERS = [
   // src/assets and index.html are already copied by default.
   // format is { from: 'folder_name', to: 'folder_name' }
   { from: 'src/assets/icons', to: '.', flatten: true},
-  { from: 'src/dist_root', to: '.', flatten: true }
+  { from: 'src/assets/dist_root', to: '.', flatten: true }
 ]
 
 exports.MY_CLIENT_PLUGINS = [

@@ -1,2 +1,8 @@
-import './nav/nav.scss';
-import './nav/nav.ts';
+import './currentProject/currentProject.ts';
+import './currentProject/currentProject.scss';
+
+import './contact/contact.ts';
+import './contact/contact.scss';
+
+import './card/card.ts';
+import './card/card.scss';

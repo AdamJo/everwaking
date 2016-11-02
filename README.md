@@ -1,3 +1,3 @@
 My personal website.
 
-Tooling from https://github.com/qdouble/angular-webpack2-starter/tree/bare-minimum.
+Basic setup from https://github.com/qdouble/angular-webpack2-starter/tree/bare-minimum and reworked for pug.
