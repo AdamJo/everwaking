@@ -25,6 +25,7 @@ const { ForkCheckerPlugin } = require('awesome-typescript-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const { root } = require('./helpers.js');
 
@@ -105,7 +106,8 @@ const clientConfig = function webpackConfig() {
           screw_ie8: true,
           warnings: false,
         }
-      })
+      }),
+      new BundleAnalyzerPlugin()
     )
   } else {
     // dev only
