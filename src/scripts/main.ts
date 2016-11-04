@@ -1,7 +1,7 @@
 import '../stylesheets/main.scss';
 import '../container/index.ts';
 
-// adds an 13kb to initial size
+// adds an 13kb to initial size - ~3kb gzipped
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/fromEvent';
@@ -43,10 +43,3 @@ function moveShadow() {
 }
 
 moveShadow();
-
-// const docStyle = document.documentElement.style;
-// const el = document.getElementById("nope");
-// el.addEventListener("mousemove", function({x, y}) {
-//   docStyle.setProperty('--space', y+'px');
-// });
-
