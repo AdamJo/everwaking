@@ -17,8 +17,8 @@ function moveShadow() {
     let height = window.innerHeight;
     let width = window.innerWidth;
 
-    let calcX = (19 + (width / x)) / (width / x)
-    let calcY = (19 + (height / y)) / (height / y)
+    let calcX = (19 + (width / x)) / (width / x);
+    let calcY = (19 + (height / y)) / (height / y);
 
     if (calcX > 10.5) {
       calcX = ((calcX) * -1 + 10);
@@ -37,8 +37,8 @@ function moveShadow() {
       calcY = 0;
     }
 
-    docStyleRx.setProperty('--x', calcX*3+'px');
-    docStyleRx.setProperty('--y', calcY*3+'px');
+    docStyleRx.setProperty('--x', calcX+'px');
+    docStyleRx.setProperty('--y', calcY+'px');
   });
 }
 

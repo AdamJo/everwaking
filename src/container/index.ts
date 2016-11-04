@@ -6,3 +6,6 @@ import './contact/contact.scss';
 
 import './card/card.ts';
 import './card/card.scss';
+
+import './others/others.ts';
+import './others/others.scss';

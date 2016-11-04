@@ -7,10 +7,9 @@
 import 'ts-helpers';
 
 import {
-  DEV_PORT, PROD_PORT, EXCLUDE_SOURCE_MAPS, HOST,
-  USE_DEV_SERVER_PROXY, DEV_SERVER_PROXY_CONFIG, DEV_SERVER_WATCH_OPTIONS,
+  DEV_PORT, PROD_PORT, HOST, DEV_SERVER_WATCH_OPTIONS,
   DEV_SOURCE_MAPS, PROD_SOURCE_MAPS, MY_COPY_FOLDERS,
-  MY_CLIENT_PLUGINS, MY_CLIENT_PRODUCTION_PLUGINS, MY_CLIENT_RULES, MY_PUG_VARIABLES
+  MY_CLIENT_PLUGINS, MY_CLIENT_RULES, MY_PUG_VARIABLES
 } from './constants';
 
 const {
@@ -69,6 +68,7 @@ const clientConfig = function webpackConfig() {
         exclude: ['/node_modules/'],
         loader: ExtractTextPlugin.extract({loader: `css?minimize!sass`, fallbackLoader: 'style'})
       },
+      { test: /\.jpg$/, loader: "url-loader" },
       {
         test:/\.pug$/,
         exclude: ['/node_modules/'],

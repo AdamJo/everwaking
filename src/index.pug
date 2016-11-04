@@ -9,4 +9,5 @@ html
     each option in htmlWebpackPlugin.options.data.meta
       meta(name=option.name, content=option.content)
   body
-    include ./container/card/card
+    div.flex-container
+      include ./container/card/card

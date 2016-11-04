@@ -1,5 +1,4 @@
 .contacts {
-  background: yellow;
   flex: 1;
 }
 
@@ -10,5 +9,29 @@ ul {
 
 li {
   list-style-type: none;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.contact-link {
+  color: hsl(0, 0%, 90%);
+
+  &:visited {
+    color: hsl(0, 0%, 80%);
+  }
+
+  &:active {
+    color: hsl(0, 0%, 85%);
+  }
+}
+
+.github-link {
+  padding: 10px 0;
+}
+
+li:first-child {
+  border-bottom: 1px solid grey;
+  width: 90%;
+  margin: auto;
   margin-bottom: 10px;
 }
