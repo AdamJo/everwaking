@@ -13,7 +13,6 @@ function moveShadow() {
     .fromEvent(window, 'mousemove');
 
   mouseMove$.subscribe(({x, y}) => {
-
     let height = window.innerHeight;
     let width = window.innerWidth;
 

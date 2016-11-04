@@ -52,13 +52,13 @@ body {
 }
 
 .on-light-link {
-  color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 40%);
 
   &:visited {
-    color: hsl(0, 0%, 30%);
+    color: hsl(0, 0%, 45%);
   }
 
   &:active {
-    color: hsl(0, 0%, 15%);
+    color: hsl(0, 0%, 30%);
   }
 }
