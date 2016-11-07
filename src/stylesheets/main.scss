@@ -34,9 +34,6 @@ body {
 .on-dark-link {
   color: hsl(51, 100%, 40%);
 
-  &:visited {
-  }
-
   &:active {
     color: hsl(51, 80%, 40%);
   }
