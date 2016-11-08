@@ -52,7 +52,7 @@
     "typescript": "~2.0.7",
     "url-loader": "^0.5.7",
     "webpack": "beta",
-    "webpack-bundle-analyzer": "^1.4.2",
+    "webpack-bundle-analyzer": "^1.5.0",
     "webpack-dev-middleware": "^1.8.4",
     "webpack-dev-server": "beta"
   }
