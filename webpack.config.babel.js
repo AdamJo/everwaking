@@ -8,6 +8,8 @@ const ENV = process.env.NODE_ENV || 'development';
 
 const CSS_MAPS = ENV!=='production';
 
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
 	context: path.resolve(__dirname, "src"),
 	entry: './index.js',
@@ -85,6 +87,10 @@ module.exports = {
 	],
 
 	plugins: ([
+		new CopyWebpackPlugin([
+			{ from: 'assets/icons', to: '.', flatten: true},
+  		{ from: 'assets/dist_root', to: '.', flatten: true }
+		]),
 		new webpack.NoErrorsPlugin(),
 		new ExtractTextPlugin('style.css', {
 			allChunks: true,
