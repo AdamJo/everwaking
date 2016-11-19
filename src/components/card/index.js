@@ -8,7 +8,7 @@ export default class Card extends Component {
 
 	componentDidMount() {
 		const docStyle = document.documentElement.style;
-		const el = document.getElementById("nope");
+		const el = document.getElementById("move-shadow");
 		el.addEventListener("mousemove", (element) => {
 				let x = element.clientX;
 				let y = element.clientY;
@@ -43,7 +43,7 @@ export default class Card extends Component {
 
 	render() {
 		return (
-      <div id="nope" class="card">
+      <div id="move-shadow" class="card">
       <div class="card-info">
         <Contact/>
         <CurrentProject/>
