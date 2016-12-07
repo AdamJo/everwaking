@@ -5,7 +5,28 @@ import Contact from '../contact';
 import CurrentProject from '../current-project';
 
 export default class Card extends Component {
+	cardStyle = {
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'center',
+		height: '100%'
+	}
 
+	cardInfo = {
+		boxShadow: "var(--x) var(--y) 5px rgba(100, 100, 100, .4)",
+
+		margin: 'auto',
+		minHeight: '250px',
+		minWidth: '400px',
+
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		flexWrap: 'wrap',
+
+		textAlign: 'center'
+	}
+	
 	componentDidMount() {
 		const docStyle = document.documentElement.style;
 		const el = document.getElementById("move-shadow");
@@ -43,8 +64,8 @@ export default class Card extends Component {
 
 	render() {
 		return (
-      <div id="move-shadow" class="card">
-      <div class="card-info">
+      <div id="move-shadow" style={this.cardStyle}>
+      <div style={this.cardInfo}>
         <Contact/>
         <CurrentProject/>
       </div>
