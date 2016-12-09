@@ -48,7 +48,8 @@ export default class Card extends Component {
 		// ✔ transform: translate(x,y) =  compositor thread only
 		// X box-shadow: x y size color = layout, painted, compositor thread
 		const el = document.getElementById("move-shadow");
-		const svgElement = document.getElementById("svgElement"); 
+		const svgElement = document.getElementById("svgElement");
+
 		el.addEventListener('mousemove', (element) => {
 			let x = element.clientX;
 			let y = element.clientY;
