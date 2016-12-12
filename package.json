@@ -20,7 +20,7 @@
   "license": "MIT",
   "author": "Adam Johannesmeyer <adam.johannesmeyer@gmail.com>",
   "devDependencies": {
-    "autoprefixer": "^6.4.0",
+    "autoprefixer": "^6.5.4",
     "babel": "^6.5.2",
     "babel-core": "^6.14.0",
     "babel-eslint": "^7.0.0",
