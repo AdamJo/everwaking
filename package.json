@@ -71,7 +71,7 @@
   "dependencies": {
     "preact": "^7.1.0",
     "preact-compat": "^3.9.4",
-    "preact-router": "^2.0.0",
+    "preact-router": "^2.4.1",
     "proptypes": "^0.14.3"
   }
 }
