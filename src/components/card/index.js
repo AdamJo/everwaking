@@ -1,40 +1,12 @@
 import { h, Component } from 'preact';
-import style from './style';
 
 import Contact from '../contact';
 import CurrentProject from '../current-project';
 import Hobbies from '../hobbies';
 
+import { cardStyle, cardInfo, mySvg } from './style.css';
+
 export default class Card extends Component {
-  cardStyle = {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    height: '100%'
-  };
-
-  cardInfo = {
-    margin: 'auto',
-    minHeight: '250px',
-    minWidth: '400px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    textAlign: 'center',
-    position: 'relative',
-    zIndex: '50'
-  };
-
-  mySvg = {
-    minHeight: 472,
-    minWidth: 410,
-    top: -5,
-    left: -5,
-    position: 'absolute',
-    zIndex: -5
-  };
-
   componentDidMount() {
     // use svg element so I can animate it via `transform: translate(x,y)` and not `box-shadow`
     // ✔ transform: translate(x,y) =  compositor thread only
@@ -74,12 +46,13 @@ export default class Card extends Component {
   }
 
   render() {
+    console.log(cardStyle, cardInfo, mySvg);
     return (
-      <div id="move-shadow" style={this.cardStyle}>
-        <div style={this.cardInfo}>
+      <div id="move-shadow" className={cardStyle}>
+        <div className={cardInfo}>
           <svg
             id="svgElement"
-            style={this.mySvg}
+            className={mySvg}
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
           >
@@ -97,7 +70,7 @@ export default class Card extends Component {
               x="5"
               y="5"
               width="400"
-              height="490"
+              height="468"
             />
           </svg>
           <Contact />

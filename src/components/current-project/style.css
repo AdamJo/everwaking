@@ -1,13 +1,12 @@
-@import '~style/helpers';
-
-.current-project {
+currentProject {
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   flex-direction: column;
   height: 256px;
-}
+};
+
 .project-logo {
   width: 124px;
 }
