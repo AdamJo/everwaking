@@ -1,7 +1,6 @@
-/node_modules
-/npm-debug.log
-/build
+node_modules
+__test__/__snapshots__
 .DS_Store
-/coverage
-/.idea
-yarn.lock
+*.log
+dist
+.vscode
