@@ -57,7 +57,7 @@
     "mocha": "^3.0.0",
     "ncp": "^2.0.0",
     "node-sass": "^4.5.0",
-    "offline-plugin": "^4.5.3",
+    "offline-plugin": "^4.6.0",
     "phantomjs-prebuilt": "^2.1.12",
     "postcss-loader": "^1.2.2",
     "raw-loader": "^0.5.1",
