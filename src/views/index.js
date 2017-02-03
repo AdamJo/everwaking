@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 import Card from './containers/card';
 
 // const onChange = obj => window.ga && ga('send', 'pageview', obj.url);

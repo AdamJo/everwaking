@@ -1,12 +1,10 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 import { hobbiesStyle, header, details } from './style.sass';
-export default class Hobbies extends Component {
-  render() {
-    return (
-      <div className={`${hobbiesStyle} light`}>
-        <div className={header}>Hobbies</div>
-        <div className={details}>Photography, Travel, Reading</div>
-      </div>
-    );
-  }
+export default function() {
+  return (
+    <div className={`${hobbiesStyle} light`}>
+      <div className={header}>Hobbies</div>
+      <div className={details}>Photography, Travel, Reading</div>
+    </div>
+  );
 }
