@@ -14,7 +14,8 @@
     "start": "serve dist -s",
     "watch": "webpack-dashboard -- webpack-dev-server --config config/webpack",
     "dev": "webpack-dev-server --config config/webpack",
-    "test": "cross-env BABEL_ENV=test jest --watch"
+    "test": "cross-env BABEL_ENV=test jest --watch",
+    "deploy": "now -c now.json"
   },
   "dependencies": {
     "preact": "^7.1.0",
