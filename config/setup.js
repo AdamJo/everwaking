@@ -16,7 +16,6 @@ const isProd = env === 'production';
 // base plugins array
 const plugins = [
   new Clean([ 'dist' ], { root: root }),
-  new Copy([ { context: 'src/static/', from: '**/*.*' } ]),
   new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
   new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(env) }),
   new webpack.NamedModulesPlugin(),
@@ -35,6 +34,7 @@ const plugins = [
 
 if (isProd) {
   plugins.push(
+    new Copy([ { context: 'src/static/', from: '**/*.*' } ]),
     new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
     new webpack.optimize.UglifyJsPlugin(uglify),
     new SWPrecache({

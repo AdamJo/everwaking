@@ -1,13 +1,13 @@
 {
   "private": true,
-  "name": "preact-starter",
+  "name": "everwaking",
   "version": "0.1.2",
   "license": "MIT",
-  "repository": "lukeed/preact-starter",
+  "repository": "adamjo/everwaking",
   "author": {
-    "name": "Luke Edwards",
-    "email": "luke.edwards05@gmail.com",
-    "url": "https://lukeed.com"
+    "name": "Adam Johannesmeyer",
+    "email": "adam.johannesmeyer@gmail.com",
+    "url": "https://everwaking.com"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config config/webpack",
@@ -17,7 +17,6 @@
     "test": "cross-env BABEL_ENV=test jest --watch"
   },
   "dependencies": {
-    "md-colors": "^1.0.0",
     "preact": "^7.1.0",
     "preact-router": "^2.3.2"
   },
@@ -41,6 +40,7 @@
     "node-sass": "^4.3.0",
     "postcss-loader": "^1.2.2",
     "preact-render-to-string": "^3.5.0",
+    "react": "^15.4.2",
     "react-test-renderer": "^15.4.2",
     "sass-loader": "^4.1.1",
     "serve": "^2.4.3",
