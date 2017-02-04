@@ -8,6 +8,7 @@ export default function() {
       <a
         href="https://minidota.watch"
         target="_blank"
+        rel="noopener"
         class="on-dark-link content"
       >
         <div className={styles.project}>

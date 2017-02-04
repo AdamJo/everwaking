@@ -12,7 +12,11 @@ export default function() {
           Full Stack Developer
         </li>
         <li>
-          <a className="on-light-link" href="https://github.com/adamjo">
+          <a
+            className="on-light-link"
+            href="https://github.com/adamjo"
+            rel="noopener"
+          >
             Github
           </a>
         </li>
