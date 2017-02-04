@@ -9,10 +9,7 @@ function init() {
 
 init();
 
-console.log(process.env.NODE_ENV === 'production');
-
 if (process.env.NODE_ENV === 'production' && location.protocol === 'https:') {
-  console.log('SERVICE WORKER');
   // cache all assets if browser supports serviceworker
   if ('serviceWorker' in navigator && location.protocol === 'https:') {
     navigator.serviceWorker.register('/service-worker.js');
