@@ -6,42 +6,50 @@ import Hobbies from '../../components/hobbies';
 import { cardStyle, cardInfo, mySvg } from './style.sass';
 
 export default class Card extends Component {
+  constructor() {
+    super();
+    let height;
+    let width;
+    this.calculateShadowPosition = this.calculateShadowPosition.bind(this);
+  }
+
   componentDidMount() {
+    const el = document.getElementById('move-shadow');
+    const svgElement = document.getElementById('svgElement');
+    this.height = window.innerHeight;
+    this.width = window.innerWidth;
+    el.addEventListener('mousemove', this.calculateShadowPosition);
+    window.addEventListener('resize', () => {
+      this.height = window.innerHeight;
+      this.width = window.innerWidth;
+    })
+  }
+
+  calculateShadowPosition({clientX, clientY}) {
     // use svg element so I can animate it via `transform: translate(x,y)` and not `box-shadow`
     // ✔ transform: translate(x,y) =  compositor thread only
     // X box-shadow: x y size color = layout, painted, compositor thread
-    const el = document.getElementById('move-shadow');
-    const svgElement = document.getElementById('svgElement');
+    let calcX = (19 + this.width / clientX) / (this.width / clientX);
+    let calcY = (19 + this.height / clientY) / (this.height / clientY);
 
-    el.addEventListener('mousemove', element => {
-      let x = element.clientX;
-      let y = element.clientY;
+    if (calcX > 10.5) {
+      calcX = calcX * (-1) + 10;
+    } else {
+      calcX = (calcX - 11) * (-1);
+    }
 
-      let height = window.innerHeight;
-      let width = window.innerWidth;
+    if (calcY > 10.5) {
+      calcY = calcY * (-1) + 10;
+    } else {
+      calcY = (calcY - 11) * (-1);
+    }
 
-      let calcX = (19 + width / x) / (width / x);
-      let calcY = (19 + height / y) / (height / y);
+    if (isNaN(calcX) || isNaN(calcY)) {
+      calcX = 0;
+      calcY = 0;
+    }
 
-      if (calcX > 10.5) {
-        calcX = calcX * (-1) + 10;
-      } else {
-        calcX = (calcX - 10) * (-1);
-      }
-
-      if (calcY > 10.5) {
-        calcY = calcY * (-1) + 10;
-      } else {
-        calcY = (calcY - 10) * (-1);
-      }
-
-      if (isNaN(calcX) || isNaN(calcY)) {
-        calcX = 0;
-        calcY = 0;
-      }
-
-      svgElement.style.transform = `translate(${calcX}px, ${calcY}px)`;
-    });
+    svgElement.style.transform = `translate(${calcX}px, ${calcY}px)`;
   }
 
   render() {
