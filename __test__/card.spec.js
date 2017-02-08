@@ -13,19 +13,19 @@ describe('Card', () => {
         // use svg element so I can animate it via `transform: translate(x,y)` and not `box-shadow`
         // ✔ transform: translate(x,y) =  compositor thread only
         // X box-shadow: x y size color = layout, painted, compositor thread
-        let calcX = (19 + width / clientX) / (width / clientX);
-        let calcY = (19 + height / clientY) / (height / clientY);
+        let calcX = (8 + width / clientX) / (width / clientX);
+        let calcY = (8 + height / clientY) / (height / clientY);
 
-        if (calcX > 10.5) {
-          calcX = calcX * (-1) + 10;
+        if (calcX > 5.5) {
+          calcX = calcX * (-1) + 5;
         } else {
-          calcX = (calcX - 11) * (-1);
+          calcX = (calcX - 5) * (-1);
         }
 
-        if (calcY > 10.5) {
-          calcY = calcY * (-1) + 10;
+        if (calcY > 5.5) {
+          calcY = calcY * (-1) + 5;
         } else {
-          calcY = (calcY - 11) * (-1);
+          calcY = (calcY - 5) * (-1);
         }
 
         if (isNaN(calcX) || isNaN(calcY)) {
@@ -40,26 +40,26 @@ describe('Card', () => {
       expect(typeof Card).toBe('function');
     });
 
-    it('calculates X transform translate <= 10', () => {
-      expect(calculateShadowPosition(1, 1, 1000, 1000)).toBeLessThanOrEqual(10);
+    it('calculates X transform translate <= 4', () => {
+      expect(calculateShadowPosition(1, 1, 1000, 1000)).toBeLessThanOrEqual(4);
     })
 
-    it('calculates X transform translate to equal 10', () => {
-      expect(calculateShadowPosition(1000, 1000, 1000, 1000)).toBe(-10);
+    it('calculates X transform translate to equal -4', () => {
+      expect(calculateShadowPosition(1000, 1000, 1000, 1000)).toBe(-4);
     })
-    it('calculates X transform translate to equal .5', () => {
-      expect(calculateShadowPosition(500, 500, 1000, 1000)).toBe(.5);
-    })
-
-    it('calculates Y transform translate <= 10', () => {
-      expect(calculateShadowPosition(1, 1, 1000, 1000, false)).toBeLessThanOrEqual(10);
+    it('calculates X transform translate to equal 0', () => {
+      expect(calculateShadowPosition(500, 500, 1000, 1000)).toBe(0);
     })
 
-    it('calculates Y transform translate to equal 10', () => {
-      expect(calculateShadowPosition(1000, 1000, 1000, 1000, false)).toBe(-10);
+    it('calculates Y transform translate <= 4', () => {
+      expect(calculateShadowPosition(1, 1, 1000, 1000, false)).toBeLessThanOrEqual(4);
     })
-    it('calculates Y transform translate to equal .5', () => {
-      expect(calculateShadowPosition(500, 500, 1000, 1000, false)).toBe(.5);
+
+    it('calculates Y transform translate to equal -4', () => {
+      expect(calculateShadowPosition(1000, 1000, 1000, 1000, false)).toBe(-4);
+    })
+    it('calculates Y transform translate to equal 0', () => {
+      expect(calculateShadowPosition(500, 500, 1000, 1000, false)).toBe(0);
     })
   });
 });

@@ -29,19 +29,19 @@ export default class Card extends Component {
     // use svg element so I can animate it via `transform: translate(x,y)` and not `box-shadow`
     // ✔ transform: translate(x,y) =  compositor thread only
     // X box-shadow: x y size color = layout, painted, compositor thread
-    let calcX = (19 + this.width / clientX) / (this.width / clientX);
-    let calcY = (19 + this.height / clientY) / (this.height / clientY);
+    let calcX = (8 + this.width / clientX) / (this.width / clientX);
+    let calcY = (8 + this.height / clientY) / (this.height / clientY);
 
-    if (calcX > 10.5) {
-      calcX = calcX * (-1) + 10;
+    if (calcX > 5.5) {
+      calcX = calcX * (-1) + 5;
     } else {
-      calcX = (calcX - 11) * (-1);
+      calcX = (calcX - 5) * (-1);
     }
 
-    if (calcY > 10.5) {
-      calcY = calcY * (-1) + 10;
+    if (calcY > 5.5) {
+      calcY = calcY * (-1) + 5;
     } else {
-      calcY = (calcY - 11) * (-1);
+      calcY = (calcY - 5) * (-1);
     }
 
     if (isNaN(calcX) || isNaN(calcY)) {
