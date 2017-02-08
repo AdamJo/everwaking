@@ -50,7 +50,7 @@ module.exports = {
     ]
   },
   plugins: plugins,
-  devtool: !isProd && 'eval',
+  devtool: isProd ? 'source-map' : 'eval-cheap-module-source-map',
   devServer: {
     contentBase: out,
     port: process.env.PORT || 3000,

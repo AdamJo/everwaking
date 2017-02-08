@@ -6,4 +6,4 @@ dist
 .vscode
 now.json
 lighthouse/*.html
-.vscode
+.chrome
