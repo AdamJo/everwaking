@@ -22,10 +22,10 @@ export default class Card extends Component {
     window.addEventListener('resize', () => {
       this.height = window.innerHeight;
       this.width = window.innerWidth;
-    })
+    });
   }
 
-  calculateShadowPosition({clientX, clientY}) {
+  calculateShadowPosition({ clientX, clientY }) {
     // use svg element so I can animate it via `transform: translate(x,y)` and not `box-shadow`
     // ✔ transform: translate(x,y) =  compositor thread only
     // X box-shadow: x y size color = layout, painted, compositor thread

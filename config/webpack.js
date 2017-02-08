@@ -24,6 +24,11 @@ module.exports = {
   },
   output: { path: out, filename: '[name].[hash].js', publicPath: '/' },
   resolve: {
+		alias: {
+			// you may need `preact-compat` instead!
+			'react': 'preact/aliases',
+ 			'react-dom': 'preact/aliases'
+		},
     // modules: [ 'src', 'node_modules' ],
     extensions: [ '.js', '.sass', '.scss' ],
     alias: { components: root('src/views/components/') }

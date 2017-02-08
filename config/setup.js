@@ -18,7 +18,6 @@ const plugins = [
   new Clean([ 'dist' ], { root: root }),
   new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
   new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(env) }),
-  new webpack.NamedModulesPlugin(),
   new HTML({ template: 'src/index.html' }),
   new ExtractText({
     filename: 'styles.[hash].css',
@@ -48,7 +47,7 @@ if (isProd) {
   );
 } else {
   // dev only
-  plugins.push(new webpack.HotModuleReplacementPlugin(), new Dashboard());
+  plugins.push(new webpack.HotModuleReplacementPlugin(), new Dashboard(), new webpack.NamedModulesPlugin());
 }
 
 exports.env = env;
