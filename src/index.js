@@ -12,7 +12,7 @@ init();
 if (process.env.NODE_ENV === 'production' && location.protocol === 'https:') {
   // cache all assets if browser supports serviceworker
   if ('serviceWorker' in navigator && location.protocol === 'https:') {
-    navigator.serviceWorker.register('/service-worker.js');
+    require('./service-worker');
   }
 
   // add Google Analytics

@@ -1,11 +1,11 @@
 const { join } = require('path');
 const webpack = require('webpack');
 const ExtractText = require('extract-text-webpack-plugin');
-const SWPrecache = require('sw-precache-webpack-plugin');
 const Dashboard = require('webpack-dashboard/plugin');
 const Clean = require('clean-webpack-plugin');
 const Copy = require('copy-webpack-plugin');
 const HTML = require('html-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 const uglify = require('./uglify');
 
@@ -37,12 +37,14 @@ if (isProd) {
     new Copy([ { context: 'src/static/', from: '**/*.*' } ]),
     new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
     new webpack.optimize.UglifyJsPlugin(uglify),
-    new SWPrecache({
-      filename: 'service-worker.js',
-      dontCacheBustUrlsMatching: /./,
-      navigateFallback: 'index.html',
-      staticFileGlobsIgnorePatterns: [ /\.map$/ ]
-    })
+		new OfflinePlugin({
+			relativePaths: false,
+			AppCache: false,
+			ServiceWorker: {
+				events: true
+			},
+			publicPath: '/'
+		})
   );
 } else {
   // dev only
