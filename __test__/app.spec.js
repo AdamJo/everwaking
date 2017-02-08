@@ -2,14 +2,13 @@ import { h, Component } from 'preact';
 import render from 'preact-render-to-string';
 import App from '../src/views/';
 
-describe('preact-layout', () => {
+describe('App', () => {
   it('exports `App`', () => {
     expect(typeof App).toBe('object');
   });
 });
 
-test('test is working!', () => {
+test('snapshot is working!', () => {
   const app = render(App);
-  // let tree = app.toJSON();
   expect(app).toMatchSnapshot();
 });
