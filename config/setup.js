@@ -8,48 +8,61 @@ const HTML = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 
 const uglify = require('./uglify');
+const babel = require('./babel');
 
 const root = join(__dirname, '..');
-const env = process.env.NODE_ENV || 'development';
-const isProd = env === 'production';
 
-// base plugins array
-const plugins = [
-  new Clean([ 'dist' ], { root: root }),
-  new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
-  new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(env) }),
-  new HTML({ template: 'src/index.html' }),
-  new ExtractText({
-    filename: 'styles.[hash].css',
-    // disable: !isProd
-    allChunks: true
-  }),
-  new webpack.LoaderOptionsPlugin({
-    options: {
-      postcss: [ require('autoprefixer')({ browsers: [ 'last 3 version' ] }) ]
-    }
-  })
-];
+module.exports = isProd => {
+  // base plugins array
+  const plugins = [
+    new Clean(['dist'], { root: root }),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(
+        isProd ? 'production' : 'development'
+      )
+    }),
+    new HTML({ template: 'src/index.html' }),
+		new webpack.LoaderOptionsPlugin({
+			options: {
+				babel,
+				postcss: [
+					require('autoprefixer')({ browsers: ['last 3 version'] })
+				]
+			}
+    })
+  ];
 
-if (isProd) {
-  plugins.push(
-    new Copy([ { context: 'src/static/', from: '**/*.*' } ]),
-    new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
-    new webpack.optimize.UglifyJsPlugin(uglify),
-		new OfflinePlugin({
-			relativePaths: false,
-			AppCache: false,
-			ServiceWorker: {
-				events: true
-			},
-			publicPath: '/'
-		})
-  );
-} else {
-  // dev only
-  plugins.push(new webpack.HotModuleReplacementPlugin(), new Dashboard(), new webpack.NamedModulesPlugin());
-}
+  if (isProd) {
+    babel.presets.push('babili');
 
-exports.env = env;
-exports.isProd = isProd;
-exports.plugins = plugins;
+    plugins.push(
+      new Copy([{ context: 'src/static/', from: '**/*.*' }]),
+      new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
+      new webpack.optimize.UglifyJsPlugin(uglify),
+      new ExtractText({
+        filename: 'styles.[hash].css',
+        // disable: !isProd,
+        // allChunks: true
+        // ignoreOrder: true),
+      }),
+      new OfflinePlugin({
+        relativePaths: false,
+        AppCache: false,
+        ServiceWorker: {
+          events: true
+        },
+        publicPath: '/'
+      })
+    );
+  } else {
+    // dev only
+    plugins.push(
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NamedModulesPlugin(),
+      new Dashboard()
+    );
+  }
+
+  return plugins;
+};

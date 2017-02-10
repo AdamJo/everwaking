@@ -10,7 +10,7 @@
     "url": "https://everwaking.com"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config config/webpack",
+    "build": "webpack --env.production --config config/webpack",
     "start": "serve dist -s",
     "watch": "webpack-dashboard -- webpack-dev-server --config config/webpack",
     "dev": "webpack-dev-server --config config/webpack",
@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "preact": "^7.2.0",
-    "preact-router": "^2.4.1"
+    "preact-redux": "^2.0.0",
+    "preact-router": "^2.4.1",
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",
@@ -41,7 +42,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "beta",
+    "extract-text-webpack-plugin": "2.0.0-rc.2",
     "html-webpack-plugin": "^2.28.0",
     "jest": "^18.1.0",
     "node-sass": "^4.5.0",
