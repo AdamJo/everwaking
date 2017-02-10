@@ -5,32 +5,31 @@ import CurrentProject from '../../components/current-project';
 import Hobbies from '../../components/hobbies';
 import { cardStyle, cardInfo, mySvg } from './style.sass';
 
+import { connect } from 'preact-redux';
+import store from 'Redux/store';
+import { bindActions } from 'Redux/util';
+import * as actions from 'Redux/action';
+import reduce from 'Redux/reducers';
+
+@connect(reduce, bindActions(actions))
 export default class Card extends Component {
   constructor() {
     super();
-    let height;
-    let width;
     this.calculateShadowPosition = this.calculateShadowPosition.bind(this);
   }
 
   componentDidMount() {
     const el = document.getElementById('move-shadow');
     const svgElement = document.getElementById('svgElement');
-    this.height = window.innerHeight;
-    this.width = window.innerWidth;
     el.addEventListener('mousemove', this.calculateShadowPosition);
-    window.addEventListener('resize', () => {
-      this.height = window.innerHeight;
-      this.width = window.innerWidth;
-    });
   }
 
   calculateShadowPosition({ clientX, clientY }) {
     // use svg element so I can animate it via `transform: translate(x,y)` and not `box-shadow`
     // ✔ transform: translate(x,y) =  compositor thread only
     // X box-shadow: x y size color = layout, painted, compositor thread
-    let calcX = (8 + this.width / clientX) / (this.width / clientX);
-    let calcY = (8 + this.height / clientY) / (this.height / clientY);
+    let calcX = (8 + this.props.windowWidth / clientX) / (this.props.windowWidth / clientX);
+    let calcY = (8 + this.props.windowHeight / clientY) / (this.props.windowHeight / clientY);
 
     if (calcX > 5.5) {
       calcX = calcX * (-1) + 5;
