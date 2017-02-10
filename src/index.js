@@ -1,9 +1,11 @@
 import { render } from 'preact';
+
+import { Provider } from 'preact-redux';
+import App from './views'
 import './global-style';
 
-let elem, App;
+let elem;
 function init() {
-  App = require('./views').default;
   elem = render(App, document.body, elem);
 }
 
@@ -22,7 +24,8 @@ if (process.env.NODE_ENV === 'production' && location.protocol === 'https:') {
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-83059702-2', 'auto');
   ga('send', 'pageview');
-} else {
+}
+ else {
   // use preact's devtools
   require('preact/devtools');
   // listen for HMR
