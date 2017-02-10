@@ -17,7 +17,6 @@ export default function() {
             height="132"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 124 132"
-            className={styles.projectLogo}
           >
             <path
               fill="#FFF"
