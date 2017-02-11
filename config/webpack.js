@@ -16,7 +16,9 @@ module.exports = env => {
       src: root('./src'),
       vendor: [
         // pull these to a `vendor.js` file
-        'preact'
+        'preact',
+        'preact-redux',
+        'redux'
       ]
     },
     output: { path: dist, filename: '[name].[hash].js', publicPath: '/' },
