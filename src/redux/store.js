@@ -3,13 +3,17 @@ import { createStore } from 'redux';
 let ACTIONS = {
 	ON_RESIZE: ({ windowSize, ...state }, action) => {
 		return ({
-		windowWidth: action.width,
-		windowHeight: action.height
+		windowSize: {width: action.width, height: action.height},...state
+	})},
+	ON_MOUSE_MOVE: ({ mouseCoords, ...state }, action) => {
+		return ({
+		mouseCoords: {x: action.x, y: action.y},...state
 	})}
 };
 
 const INITIAL = {
-	windowSize: []
+	windowSize: {},
+	mouseCoords: {}
 };
 
 export default createStore( (state, action) => (
