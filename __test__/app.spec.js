@@ -4,7 +4,7 @@ import App from '../src/views/';
 
 describe('App', () => {
   it('exports `App`', () => {
-    expect(typeof App).toBe('object');
+    expect(typeof App).toBe('function');
   });
 });
 

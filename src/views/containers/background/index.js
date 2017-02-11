@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import styles from './style';
+import styles from './style.sass';
 
 import { connect } from 'preact-redux';
 import { bindActions } from 'Redux/util';

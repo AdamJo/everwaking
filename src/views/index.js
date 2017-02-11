@@ -1,8 +1,6 @@
 import { h, Component } from 'preact';
 
-import { Provider } from 'preact-redux';
 import { connect } from 'preact-redux';
-import store from 'Redux/store';
 import { bindActions } from 'Redux/util';
 import * as actions from 'Redux/action';
 import reduce from 'Redux/reducers';
