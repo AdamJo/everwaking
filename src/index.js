@@ -1,12 +1,14 @@
-import { render } from 'preact';
+import { h, render } from 'preact';
 
 import { Provider } from 'preact-redux';
+import store from 'Redux/store';
+
 import App from './views'
 import './global-style';
 
 let elem;
 function init() {
-  elem = render(App, document.body, elem);
+  elem = render(<Provider store={store}><App/></Provider>, document.body, elem);
 }
 
 init();
