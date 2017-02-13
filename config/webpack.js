@@ -27,6 +27,7 @@ module.exports = env => {
         react: 'preact/aliases',
         'react-dom': 'preact/aliases',
         components: root('src/views/components/'),
+        Utils: root('src/utils/'),
         Redux: root('src/redux')
       },
       extensions: ['.js', '.sass', '.scss'],
