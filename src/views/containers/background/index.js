@@ -1,20 +1,25 @@
 import { h, Component } from 'preact';
 import styles from './style.sass';
+import Sketch from 'Utils/rain';
 
-import { connect } from 'preact-redux';
-import { bindActions } from 'Redux/util';
-import * as actions from 'Redux/action';
-import reduce from 'Redux/reducers';
-
-@connect(reduce, bindActions(actions))
 export default class Background extends Component {
-  
+  constructor() {
+    super()
+    this.state = { sketch: new Sketch() }
+  }
+
   componentDidMount() {
+    this.state.sketch.setup(this.props.windowSize.width, this.props.windowSize.height);
+    this.state.sketch.draw();
+
+    setTimeout(() => {
+      this.state.sketch.reset();
+    }, 10000)
   }
 
   render() {
     return (
-        <canvas width={this.props.windowWidth} height={this.props.windowHeight} style="position: absolute"/>
+        <canvas id="background" width={this.props.windowSize.width} height={this.props.windowSize.height} style="position: absolute"/>
     );
   }
 }

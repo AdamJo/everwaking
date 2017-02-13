@@ -16,9 +16,7 @@ export default class App extends Component {
     this.calculateShadowPosition = this.calculateShadowPosition.bind(this);
   }
 
-
   componentWillMount() {
-    this.props.windowSize
     let onResize = () => {
       this.props.onResize(window.innerWidth, window.innerHeight);
     }
@@ -58,7 +56,7 @@ export default class App extends Component {
   render() {
     return (
       <div id="app">
-        <Background/>
+        <Background windowSize={this.props.windowSize}/>
         <Card windowSize={this.props.windowSize} mouseX={this.props.mouseCoords.x} mouseY={this.props.mouseCoords.y} style="position: absolute"/>
       </div>
     )
