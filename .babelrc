@@ -5,7 +5,8 @@
         ["module-resolver", {
           "root": ["./src"],
           "alias": {
-            "Redux": "redux"
+            "Redux": "redux",
+            "Utils": "utils"
           }
         }],
         ["transform-class-properties"],
