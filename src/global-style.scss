@@ -23,20 +23,19 @@
   }
 
   .dark {
-    background: hsl(0, 0%, 50%);
+    background: hsl(0, 0%, 80%);
   }
 
   .on-dark {
-    color: hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 20%);
   }
 
   .on-dark-link {
-    color: hsl(51, 100%, 40%);
-
+    color: hsl(51, 60%, 40%);
   }
 
   .on-dark-link:active {
-    color: hsl(51, 80%, 40%);
+    color: hsl(51, 50%, 40%);
   }
 
   .light {
