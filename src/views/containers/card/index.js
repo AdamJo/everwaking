@@ -8,12 +8,12 @@ import { cardStyle, cardInfo, mySvg } from './style.sass';
 export default class Card extends Component {
 
   componentDidMount() {
-    const el = document.getElementById('move-shadow');
-    svgElement.style.transform = `translate(${this.props.mouseX}px, ${this.props.mouseY}px)`;
+    // const el = document.getElementById('move-shadow');
+    // svgElement.style.transform = `translate(${this.props.mouseX}px, ${this.props.mouseY}px)`;
   }
 
   componentWillUpdate(nextProps, nextState) {
-    svgElement.style.transform = `translate(${nextProps.mouseX}px, ${nextProps.mouseY}px)`;
+    // svgElement.style.transform = `translate(${nextProps.mouseX}px, ${nextProps.mouseY}px)`;
   }
 
   render() {
@@ -35,12 +35,12 @@ export default class Card extends Component {
               filter="url(#blur-2)"
               id="Rectangle"
               stroke="none"
-              fill="rgba(100, 100, 100, .4)"
+              fill="rgba(204, 173, 0, .2)"
               fill-rule="evenodd"
-              x="5"
-              y="5"
-              width="400"
-              height="468"
+              x="2"
+              y="2"
+              width="405"
+              height="473"
             />
           </svg>
           <Contact />
