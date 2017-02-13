@@ -12,7 +12,7 @@ let ACTIONS = {
 };
 
 const INITIAL = {
-	windowSize: {},
+	windowSize: {width: window.innerWidth, height: window.innerHeight},
 	mouseCoords: {}
 };
 
