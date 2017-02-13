@@ -1,4 +1,4 @@
-import Vector from './vectors2D';
+// import Vector from './vectors2D';
 
 export default class Drop {
   constructor(width, height) {
@@ -24,6 +24,7 @@ export default class Drop {
       this.yspeed *= -1;
       this.firstFall = false;
     }
+
     if (this.y < 0 && !this.firstFall) {
       this.yspeed *= -1;
     }
