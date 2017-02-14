@@ -26,7 +26,7 @@ export default class App extends Component {
     return (
       <div id="app">
         <Background create={this.props.onCreate}/>
-        <Card style="position: absolute"/>
+        <Card/>
       </div>
     )
   }
