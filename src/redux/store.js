@@ -1,7 +1,11 @@
 import { createStore } from 'redux';
+import Sketch from 'Utils/rain';
 
 let ACTIONS = {
 	ON_RESIZE: ({ windowSize, ...state }, action) => {
+		let sketch = new Sketch();
+    sketch.setup(action.width, action.height);
+    sketch.draw();
 		return ({
 		windowSize: {width: action.width, height: action.height},...state
 	})},

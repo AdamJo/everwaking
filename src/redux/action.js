@@ -13,4 +13,3 @@ export function onMouseMove(x, y) {
 		y
 	};
 }
-

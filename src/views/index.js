@@ -8,6 +8,8 @@ import reduce from 'Redux/reducers';
 import Card from './containers/card';
 import Background from './containers/background';
 
+import debounce from 'lodash.debounce';
+
 @connect(reduce, bindActions(actions))
 export default class App extends Component {
 
@@ -15,6 +17,7 @@ export default class App extends Component {
     let onResize = () => {
       this.props.onResize(window.innerWidth, window.innerHeight);
     }
+    window.addEventListener('resize', debounce(onResize,300));
   }
 
   render() {
