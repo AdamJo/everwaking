@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import styles from './style.sass';
 
-export default function() {
+export default () => {
   return (
     <div className={`${styles.contacts} light`}>
       <ul className={`${styles.contact} on-light content`}>
@@ -15,8 +15,7 @@ export default function() {
           <a
             className="on-light-link"
             href="https://github.com/adamjo"
-            rel="noopener"
-          >
+            rel="noopener">
             Github
           </a>
         </li>

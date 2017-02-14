@@ -1,15 +1,15 @@
 import { h } from 'preact';
 import styles from './style.sass';
 
-export default function() {
+export default () => {
   return (
-    <div className={`${styles.currentProject} dark on-dark`}>
+    <div className={`${styles.currentProject} light on-light`}>
       <h3>Current Project</h3>
       <a
         href="https://minidota.watch"
         target="_blank"
         rel="noopener"
-        class="on-dark-link content"
+        class="on-light-link content"
       >
         <div className={styles.project}>
           <p className={styles.projectName}>MiniDota.watch</p>

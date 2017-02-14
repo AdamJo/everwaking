@@ -11,10 +11,6 @@ export default class Background extends Component {
   componentDidMount() {
     this.state.sketch.setup(this.props.windowSize.width, this.props.windowSize.height);
     this.state.sketch.draw();
-
-    setTimeout(() => {
-      this.state.sketch.reset();
-    }, 10000)
   }
 
   render() {

@@ -2,7 +2,7 @@
   html, body {
     height: 100%;
     margin: 0;
-    background: hsl(0, 0%, 95%);
+    background: hsl(0, 0%, 10%);
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
     font-size: 20px;
     color: #444;
@@ -17,25 +17,9 @@
   #app {
     height: 100%;
   }
-  
+
   .content {
     font-size: .9rem;
-  }
-
-  .dark {
-    background: hsl(0, 0%, 80%);
-  }
-
-  .on-dark {
-    color: hsl(0, 0%, 20%);
-  }
-
-  .on-dark-link {
-    color: hsl(51, 60%, 40%);
-  }
-
-  .on-dark-link:active {
-    color: hsl(51, 50%, 40%);
   }
 
   .light {
