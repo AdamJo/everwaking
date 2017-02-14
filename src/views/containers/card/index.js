@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 
 import Contact from '../../components/contact';
 import CurrentProject from '../../components/current-project';

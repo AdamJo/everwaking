@@ -13,3 +13,16 @@ export function onMouseMove(x, y) {
 		y
 	};
 }
+
+export function onReset() {
+	return {
+		type: 'ON_RESET'
+	};
+}
+
+export function onCreate() {
+	return {
+		type: 'ON_CREATE'
+	};
+}
+

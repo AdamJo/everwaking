@@ -1,7 +1,7 @@
 import Drop from './drop.js'
 // import Vector from './vectors2D'
 
-export default class Sketch {
+export default class Rain {
   constructor() {
     this.drops = [];
     this.drop;
