@@ -20,7 +20,7 @@ export default class Rain {
     this.height = height;
     this.canvas.width = width;
     this.canvas.height = height;
-    this.numberOfDroplets = width < 700 ? 50 : 500; // if mobile, lower amount of drops
+    this.numberOfDroplets = width < 700 ? 20 : 50; // if mobile, lower amount of drops
 
     for (var i = 0; i < this.numberOfDroplets; i++) {
       this.drops[i] = new Droplet(this.width, this.height);
