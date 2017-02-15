@@ -10,7 +10,7 @@ export default () => {
     <div id="move-shadow" className={cardStyle}>
       <div className={cardInfo}>
         <Contact />
-        <br/>
+        <hr/>
         <CurrentProject />
       </div>
     </div>
