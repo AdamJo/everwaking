@@ -15,7 +15,6 @@ export default class Rain {
   setup(width, height) {
     this.canvas = document.getElementById('background')
     this.ctx = this.canvas.getContext('2d');
-    this.canvas.style.background = "hsl(0, 0%, 10%)";
     this.width = width;
     this.height = height;
     this.canvas.width = width;
