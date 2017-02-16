@@ -9,7 +9,7 @@ export default () => {
           <b>adam.johannesmeyer@gmail.com</b>
         </li>
         <li>
-          Full Stack Developer
+          Web Applications Developer
         </li>
         <li>
           <a
