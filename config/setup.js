@@ -42,9 +42,9 @@ module.exports = isProd => {
       new webpack.optimize.UglifyJsPlugin(uglify),
       new ExtractText({
         filename: 'styles.[hash].css',
-        // disable: !isProd,
-        // allChunks: true
-        // ignoreOrder: true),
+        disable: !isProd,
+        allChunks: true,
+        ignoreOrder: true
       }),
       new OfflinePlugin({
         relativePaths: false,
