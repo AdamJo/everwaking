@@ -14,12 +14,7 @@ module.exports = env => {
   return {
     entry: {
       src: root('./src'),
-      vendor: [
-        // pull these to a `vendor.js` file
-        'preact',
-        'preact-redux',
-        'redux'
-      ]
+      vendor: ['preact', 'preact-redux', 'redux']
     },
     output: { path: dist, filename: '[name].[hash].js', publicPath: '/' },
     resolve: {
@@ -30,7 +25,7 @@ module.exports = env => {
         Utils: root('src/utils/'),
         Redux: root('src/redux')
       },
-      extensions: ['.js', '.sass', '.scss'],
+      extensions: ['.js', '.sass', '.scss']
     },
     module: {
       rules: [
@@ -44,8 +39,8 @@ module.exports = env => {
           loader: (
             isProd
               ? ExtractText.extract({
-                  fallbackLoader: 'style-loader',
-                  loader: [
+                  fallback: 'style-loader',
+                  use: [
                     'css-loader?modules&importLoaders=1&localIdentName=[hash:base64:5]!postcss-loader!sass-loader'
                   ]
                 })

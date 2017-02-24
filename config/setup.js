@@ -13,7 +13,6 @@ const babel = require('./babel');
 const root = join(__dirname, '..');
 
 module.exports = isProd => {
-  // base plugins array
   const plugins = [
     new Clean(['dist'], { root: root }),
     new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
@@ -23,13 +22,11 @@ module.exports = isProd => {
       )
     }),
     new HTML({ template: 'src/index.html' }),
-		new webpack.LoaderOptionsPlugin({
-			options: {
-				babel,
-				postcss: [
-					require('autoprefixer')({ browsers: ['last 2 version'] })
-				]
-			}
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        babel,
+        postcss: [require('autoprefixer')({ browsers: ['last 2 version'] })]
+      }
     })
   ];
 
@@ -54,7 +51,6 @@ module.exports = isProd => {
       })
     );
   } else {
-    // dev only
     plugins.push(
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NamedModulesPlugin(),
