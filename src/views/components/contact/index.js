@@ -1,15 +1,20 @@
-import { h } from 'preact';
+import { h, Component } from 'preact';
 import styles from './style.sass';
 
-export default () => {
+export default class currentProject extends Component {
+  shouldComponentUpdate() {
+    return false;
+  }
+
+  render({jobTitle, email}) {
   return (
     <div className={`${styles.contacts} light`}>
       <ul className={`${styles.contact} on-light content`}>
         <li>
-          <b>adam.johannesmeyer@gmail.com</b>
+          <b>{email}</b>
         </li>
         <li>
-          Web Applications Developer
+          {jobTitle}
         </li>
         <li>
           <a
@@ -22,4 +27,5 @@ export default () => {
       </ul>
     </div>
   );
+}
 }

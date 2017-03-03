@@ -31,5 +31,4 @@ export default class App extends Component {
         <Card {...this.props}/>
       </div>
     );
-  }
 }
