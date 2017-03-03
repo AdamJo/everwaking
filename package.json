@@ -16,7 +16,8 @@
     "dev": "webpack-dev-server --config config/webpack",
     "test": "cross-env BABEL_ENV=test jest --watch",
     "test:ci": "cross-env BABEL_ENV=test jest",
-    "deploy": "now -c now.json",
+    "deploy:now": "now -c now.json",
+    "deploy:fire": "firebase deploy",
     "lightnouse": "lighthouse https://everwaking.com --output-path=./lighthouse/lighthouse.html --output html"
   },
   "dependencies": {
