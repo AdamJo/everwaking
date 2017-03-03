@@ -25,7 +25,8 @@ module.exports = isProd => {
     new webpack.LoaderOptionsPlugin({
       options: {
         babel,
-        postcss: [require('autoprefixer')({ browsers: ['last 2 version'] })]
+        postcss: [require('autoprefixer')({ browsers: ['last 2 version'] })],
+        context: __dirname
       }
     })
   ];
@@ -35,7 +36,7 @@ module.exports = isProd => {
 
     plugins.push(
       new Copy([{ context: 'src/static/', from: '**/*.*' }]),
-      new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }),
+      new webpack.LoaderOptionsPlugin({ minimize: true, debug: false, context: __dirname }),
       new webpack.optimize.UglifyJsPlugin(uglify),
       new ExtractText({
         filename: 'styles.[hash].css',
