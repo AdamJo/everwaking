@@ -7,19 +7,17 @@ import { cardStyle, cardInfo, card, wrapper } from './style.sass';
 
 export default class Card extends Component {
 
-  componentDidMount() {
+  componentWillUpdate() {
     let card = document.querySelector('.card');
-    document.addEventListener('mousemove', ({clientX, clientY, pageY, pageX}) => {
-      let calcX = (window.innerHeight / 2 - clientY) / 50;
-      let calcY = (window.innerWidth / 2 - clientX) / 100;
+    let calcX = (this.props.windowHeight / 2 - this.props.mouseY) / 50;
+    let calcY = (this.props.windowWidth / 2 - this.props.mouseX) / 100;
 
-      if (isNaN(calcX) || isNaN(calcY)) {
-        calcX = 0;
-        calcY = 0;
-      }
+    if (isNaN(calcX) || isNaN(calcY)) {
+      calcX = 0;
+      calcY = 0;
+    }
 
-      card.style.transform = `rotateX(${calcX}deg) rotateY(${-calcY}deg)`;
-    });
+    card.style.transform = `rotateX(${calcX}deg) rotateY(${-calcY}deg)`;
   }
 
   render() {

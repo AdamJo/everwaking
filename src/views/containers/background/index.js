@@ -6,8 +6,6 @@ export default class Background extends Component {
   }
 
   render() {
-    return (
-        <canvas id="background" style="position: absolute"/>
-    );
+    return <canvas id="background" style="position: absolute" />;
   }
 }

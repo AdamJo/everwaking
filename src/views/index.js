@@ -12,22 +12,24 @@ import debounce from 'lodash.debounce';
 
 @connect(reduce, bindActions(actions))
 export default class App extends Component {
-
   componentWillMount() {
     let onResize = () => {
       this.props.onResize(window.innerWidth, window.innerHeight);
-      this.props.onReset();
-      this.props.onCreate();
-    }
-    window.addEventListener('resize', debounce(onResize,300));
+      this.props.onResetRain();
+      this.props.onCreateRain();
+    };
+    window.addEventListener('resize', debounce(onResize, 300));
+    document.addEventListener('mousemove', ({ clientX, clientY }) => {
+      this.props.onMouseMove(clientX, clientY);
+    });
   }
 
   render() {
     return (
       <div id="app">
-        <Background create={this.props.onCreate}/>
-        <Card/>
+        <Background create={this.props.onCreateRain} />
+        <Card {...this.props}/>
       </div>
-    )
+    );
   }
 }
