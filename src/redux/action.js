@@ -1,28 +1,39 @@
-export function onResize(width, height) {
-	return {
-		type: 'ON_RESIZE',
-		width: width,
-		height: height
-	};
+export function onResize(windowWidth, windowHeight) {
+  return {
+    type: 'ON_RESIZE',
+    windowWidth,
+		windowHeight
+  };
 }
 
-export function onMouseMove(x, y) {
-	return {
-		type: 'ON_MOUSE_MOVE',
-		x,
-		y
-	};
+export function onMouseMove(mouseX, mouseY) {
+  return {
+    type: 'ON_MOUSE_MOVE',
+    mouseX,
+		mouseY
+  };
 }
 
-export function onReset() {
-	return {
-		type: 'ON_RESET'
-	};
+export function onResetRain() {
+  return {
+    type: 'ON_RESET_RAIN'
+  };
 }
 
-export function onCreate() {
-	return {
-		type: 'ON_CREATE'
-	};
+export function onCreateRain() {
+  return {
+    type: 'ON_CREATE_RAIN'
+  };
 }
 
+export function onResetWalker() {
+  return {
+    type: 'ON_RESET_WALKER'
+  };
+}
+
+export function onCreateRandomWalker() {
+  return {
+    type: 'ON_CREATE_RANDOM_WALKER'
+  };
+}
