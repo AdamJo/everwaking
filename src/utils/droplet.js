@@ -89,34 +89,4 @@ export default class Droplet {
       lightness: this.lightness
     };
   }
-
-  /*
-    Creates a random number between the given min and max
-    @params
-      min   {number} = minimum value of random number
-      max   {number} = maximum value of random number
-
-    @return {number}   random number between the two param numbers
-  */
-  _random(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
-  }
-
-  /*
-    normalizes a given value to a new set of min/max.
-    convert processing map to javascript
-    http://stackoverflow.com/questions/20910091/recreating-the-processing-map-function-in-javascript
-
-    @params:
-      value   {number} = initial number to be normalized
-      start1  {number} = initial min param size of value given
-      stop2   {number} = initial max param size of value given
-      start2  {number} = min size for normalized value
-      stop2   {number} = max size for normalized value
-    @retun {number}      normalized number
-    @example this._mapConvert(this.z, 0, 20, 1, 3); --> number between 1 and 3
-  */
-  _mapConvert(value, start1, stop1, start2, stop2) {
-    return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
-  }
 }
