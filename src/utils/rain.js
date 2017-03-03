@@ -1,4 +1,4 @@
-import Droplet from './droplet.js';
+import Droplet from "./droplet.js";
 
 export default class Rain {
   constructor() {
@@ -13,8 +13,8 @@ export default class Rain {
 
   // create initial conavas element
   setup(width, height) {
-    this.canvas = document.getElementById('background');
-    this.ctx = this.canvas.getContext('2d');
+    this.canvas = document.getElementById("background");
+    this.ctx = this.canvas.getContext("2d");
     this.width = width;
     this.height = height;
     this.canvas.width = width;

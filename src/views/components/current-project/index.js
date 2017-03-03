@@ -1,12 +1,12 @@
-import { h, Component } from 'preact';
-import styles from './style.sass';
+import { h, Component } from "preact";
+import styles from "./style.sass";
 
 export default class currentProject extends Component {
   shouldComponentUpdate() {
     return false;
   }
 
-  render({project, projectLink, projectImage}) {
+  render({ project, projectLink, projectImage }) {
     return (
       <div className={`${styles.currentProject} light on-light`}>
         <h3>Current Project {this.props}</h3>

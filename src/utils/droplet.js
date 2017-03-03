@@ -1,4 +1,4 @@
-import { _random, _mapConvert } from './helpers';
+import { _random, _mapConvert } from "./helpers";
 
 export default class Droplet {
   /**
@@ -20,7 +20,6 @@ export default class Droplet {
     this.thickness = _mapConvert(this.z, 0, 20, 1, 3); // determines thickness of
   }
 
-  
   fall() {
     // adds updated position to speed.
     this.y += this.yspeed;
@@ -69,7 +68,7 @@ export default class Droplet {
       len: this.y + this.len,
       thickness: this.thickness,
       color: this.color,
-      lightness: this.lightness
+      lightness: this.lightness,
     };
   }
 }

@@ -18,7 +18,8 @@
     "test:ci": "cross-env BABEL_ENV=test jest",
     "deploy:now": "now -c now.json",
     "deploy:fire": "firebase deploy",
-    "lightnouse": "lighthouse https://everwaking.com --output-path=./lighthouse/lighthouse.html --output html"
+    "lightnouse": "lighthouse https://everwaking.com --output-path=./lighthouse/lighthouse.html --output html",
+    "prettier": "prettier --write --trailing-comma=all \"src/views/**/*.js\" \"src/utils/**/*.js\" \"src/redux/**/*.js\" \"src/service-worker.js\""
   },
   "dependencies": {
     "preact": "^7.2.0",

@@ -1,14 +1,14 @@
-import { h, Component } from 'preact';
+import { h, Component } from "preact";
 
-import { connect } from 'preact-redux';
-import { bindActions } from 'Redux/util';
-import * as actions from 'Redux/action';
-import reduce from 'Redux/reducers';
+import { connect } from "preact-redux";
+import { bindActions } from "Redux/util";
+import * as actions from "Redux/action";
+import reduce from "Redux/reducers";
 
-import Card from './containers/card';
-import Background from './containers/background';
+import Card from "./containers/card";
+import Background from "./containers/background";
 
-import debounce from 'lodash.debounce';
+import debounce from "lodash.debounce";
 
 @connect(reduce, bindActions(actions))
 export default class App extends Component {
@@ -18,8 +18,8 @@ export default class App extends Component {
       this.props.onResetRain();
       this.props.onCreateRain();
     };
-    window.addEventListener('resize', debounce(onResize, 300));
-    document.addEventListener('mousemove', ({ clientX, clientY }) => {
+    window.addEventListener("resize", debounce(onResize, 300));
+    document.addEventListener("mousemove", ({ clientX, clientY }) => {
       this.props.onMouseMove(clientX, clientY);
     });
   }
@@ -28,7 +28,8 @@ export default class App extends Component {
     return (
       <div id="app">
         <Background create={this.props.onCreateRain} />
-        <Card {...this.props}/>
+        <Card {...this.props} />
       </div>
     );
+  }
 }

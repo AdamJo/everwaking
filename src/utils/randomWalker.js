@@ -1,4 +1,4 @@
-import Walker from './walker.js';
+import Walker from "./walker.js";
 /**
  * create initial setup for randomWalker
  * @constructor
@@ -19,9 +19,9 @@ export default class RandomWalker {
    * @param {number} height - height of window
    */
   setup(width, height) {
-    this.canvas = document.getElementById('background');
-    this.canvas.style.backgroundColor = 'red';
-    this.ctx = this.canvas.getContext('2d');
+    this.canvas = document.getElementById("background");
+    this.canvas.style.backgroundColor = "red";
+    this.ctx = this.canvas.getContext("2d");
     this.width = width;
     this.height = height;
     this.canvas.width = width;

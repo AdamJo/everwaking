@@ -1,5 +1,4 @@
-import { _random, _mapConvert } from './helpers';
-
+import { _random, _mapConvert } from "./helpers";
 
 export default class Walker {
   /**
@@ -54,7 +53,7 @@ export default class Walker {
     return {
       x: this.x,
       y: this.y,
-      len: this.y + this.len
+      len: this.y + this.len,
     };
   }
 }
