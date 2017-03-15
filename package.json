@@ -60,7 +60,7 @@
     "react-test-renderer": "^15.4.2",
     "sass-loader": "^6.0.0",
     "serve": "^4.0.1",
-    "style-loader": "^0.13.1",
+    "style-loader": "^0.14.0",
     "webpack": "^2.2.1",
     "webpack-babel-jest": "^1.0.4",
     "webpack-dashboard": "^0.3.0",
