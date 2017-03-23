@@ -11,7 +11,10 @@
   },
   "scripts": {
     "build": "webpack --env.production --config config/webpack",
-    "start": "serve dist -s",
+    "build:dev": "webpack --config config/webpack",
+    "start": "npm run dev",
+    "start:prod": "npm run prod",
+    "prod": "serve dist -s",
     "watch": "webpack-dashboard -- webpack-dev-server --config config/webpack",
     "dev": "webpack-dev-server --config config/webpack",
     "test": "cross-env BABEL_ENV=test jest --watch",
