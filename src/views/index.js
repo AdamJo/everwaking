@@ -1,9 +1,9 @@
 import { h, Component } from "preact";
 
 import { connect } from "preact-redux";
-import { bindActions } from "Redux/util";
-import * as actions from "Redux/action";
-import reduce from "Redux/reducers";
+import { bindActions } from "../redux/util";
+import * as actions from "../redux/action";
+import reduce from "../redux/reducers";
 
 import Card from "./containers/card";
 import Background from "./containers/background";
