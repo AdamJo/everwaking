@@ -35,6 +35,10 @@ module.exports = env => {
           loader: 'babel-loader'
         },
         {
+        test: /\.pdf$/,
+        loader: "file-loader?name=[name].[ext]"
+        },
+        {
           test: /\.(sass|scss)$/,
           loader: (
             isProd
@@ -46,7 +50,7 @@ module.exports = env => {
                 })
               : 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[local]__[hash:base64:5]!postcss-loader!sass-loader'
           )
-        }
+        },
       ]
     },
     plugins: setup(isProd),

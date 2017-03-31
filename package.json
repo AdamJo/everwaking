@@ -52,6 +52,7 @@
     "cross-env": "^3.2.4",
     "css-loader": "^0.27.3",
     "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.0",
     "html-webpack-plugin": "^2.28.0",
     "jest": "^19.0.1",
     "lodash.debounce": "^4.0.8",
@@ -72,7 +73,7 @@
   "jest": {
     "testRegex": "(/__test__/.*\\.spec.js)$",
     "moduleNameMapper": {
-      "\\.(css|sass|scss)$": "<rootDir>/__mocks__/styleMock.js"
+      "\\.(css|sass|scss|pdf)$": "<rootDir>/__mocks__/styleMock.js"
     }
   }
 }

@@ -1,5 +1,6 @@
 import { h, Component } from "preact";
 import styles from "./style.sass";
+import pdfFile from "../../../static/Adam_Johannesmeyer_Resume.pdf";
 
 export default class currentProject extends Component {
   shouldComponentUpdate() {
@@ -17,6 +18,7 @@ export default class currentProject extends Component {
             {jobTitle}
           </li>
           <li>
+            <a className="on-light-link" href={pdfFile}>Resume</a>{" - "}
             <a
               className="on-light-link"
               href="https://github.com/adamjo"
