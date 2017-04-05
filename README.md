@@ -1,3 +1,3 @@
 My personal website.
 
-Basic setup from [preact-boilerplate](https://github.com/developit/preact-boilerplate).
+Basic setup from [preact-starter](https://github.com/lukeed/preact-starter).
