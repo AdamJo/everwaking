@@ -24,8 +24,6 @@ module.exports = isProd => {
     new HTML({ template: 'src/index.html' }),
     new webpack.LoaderOptionsPlugin({
       options: {
-        babel,
-        postcss: [require('autoprefixer')({ browsers: ['last 2 version'] })],
         context: __dirname
       }
     })

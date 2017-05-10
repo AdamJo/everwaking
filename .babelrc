@@ -1,4 +1,9 @@
 {
+  "presets": [["es2015", { "loose": true, "modules": false }], "stage-2", "react"],
+  "plugins": [
+    ["transform-react-jsx", { "pragma": "h" }],
+    ["transform-decorators-legacy"]
+  ],
   "env": {
     "test": {
       "plugins": [
