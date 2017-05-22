@@ -64,7 +64,7 @@
     "react-test-renderer": "^15.5.4",
     "sass-loader": "^6.0.5",
     "serve": "^5.1.5",
-    "style-loader": "^0.17.0",
+    "style-loader": "^0.18.0",
     "webpack": "^2.5.1",
     "webpack-babel-jest": "^1.0.4",
     "webpack-dashboard": "^0.4.0",
