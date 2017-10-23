@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import render from 'preact-render-to-string';
-import CurrentProject from '../src/views/components/current-project';
+import CurrentProject from '../src/components/current-project';
 
 describe('currentProject', () => {
   it('exports `CurrentProject`', () => {

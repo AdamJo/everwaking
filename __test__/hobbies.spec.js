@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import render from 'preact-render-to-string';
-import Hobbies from '../src/views/components/hobbies';
+import Hobbies from '../src/components/hobbies';
 
 describe('Hobbies', () => {
   it('exports `Hobbies`', () => {

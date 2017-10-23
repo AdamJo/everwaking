@@ -1,11 +1,9 @@
 import { createStore } from "redux";
-import Rain from "Utils/rain";
-import RandomWalker from "Utils/randomWalker";
+import Rain from "../utils/rain";
 
 import { h } from "preact";
 
 let RAIN = new Rain();
-let RANDOM_WALKER = new RandomWalker();
 
 const svgImage = (
   <svg height="132" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 124 132">
@@ -39,16 +37,6 @@ let ACTIONS = {
     RAIN.stopAnimation();
     RAIN.setup(state.windowWidth, state.windowHeight);
     RAIN.draw();
-    return { ...state };
-  },
-  ON_RESET_RANDOM_WALKER: (state = {}, ction) => {
-    RANDOM_WALKER.stopAnimation();
-    return { ...state };
-  },
-  ON_CREATE_RANDOM_WALKER: (state = {}, action) => {
-    RANDOM_WALKER.stopAnimation();
-    RANDOM_WALKER.setup(state.windowWidth, state.windowHeight);
-    RANDOM_WALKER.draw();
     return { ...state };
   },
 };

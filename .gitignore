@@ -1,9 +1,5 @@
 node_modules
 __test__/__snapshots__
-.DS_Store
-*.log
-dist
-.vscode
-now.json
+/build
+/*.log
 lighthouse/*.html
-.chrome

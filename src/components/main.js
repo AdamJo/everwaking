@@ -5,13 +5,13 @@ import { bindActions } from "../redux/util";
 import * as actions from "../redux/action";
 import reduce from "../redux/reducers";
 
-import Card from "./containers/card";
-import Background from "./containers/background";
+import Card from "../routes/card";
+import Background from "../routes/background";
 
 import debounce from "lodash.debounce";
 
 @connect(reduce, bindActions(actions))
-export default class App extends Component {
+export default class Main extends Component {
   componentWillMount() {
     let onResize = () => {
       this.props.onResize(window.innerWidth, window.innerHeight);
@@ -22,6 +22,7 @@ export default class App extends Component {
     document.addEventListener("mousemove", ({ clientX, clientY }) => {
       this.props.onMouseMove(clientX, clientY);
     });
+    console.log('dare');
   }
 
   render() {
@@ -32,4 +33,4 @@ export default class App extends Component {
       </div>
     );
   }
-}
+};

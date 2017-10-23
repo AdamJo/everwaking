@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import render from 'preact-render-to-string';
-import Card from '../src/views/containers/card';
+import Card from '../src/routes/card';
 
 describe('Card', () => {
 

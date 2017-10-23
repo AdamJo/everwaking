@@ -1,6 +1,6 @@
 import { h, Component } from 'preact';
 import render from 'preact-render-to-string';
-import Contact from '../src/views/components/contact';
+import Contact from '../src/components/contact';
 
 describe('Contact', () => {
   it('exports `Contact`', () => {
