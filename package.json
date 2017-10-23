@@ -18,7 +18,7 @@
     "test": "cross-env BABEL_ENV=test jest --watch",
     "test:ci": "cross-env BABEL_ENV=test jest -u",
     "lighthouse": "lighthouse https://everwaking.com --output-path=./lighthouse/lighthouse.html --output html",
-    "prettier": "prettier --write --trailing-comma=all \"src/views/**/*.js\" \"src/utils/**/*.js\" \"src/redux/**/*.js\" \"src/service-worker.js\""
+    "prettier": "prettier --write \"src/**/*.js\""
   },
   "eslintConfig": {
     "extends": "eslint-config-synacor"

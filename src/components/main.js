@@ -22,7 +22,6 @@ export default class Main extends Component {
     document.addEventListener("mousemove", ({ clientX, clientY }) => {
       this.props.onMouseMove(clientX, clientY);
     });
-    console.log('dare');
   }
 
   render() {
@@ -33,4 +32,4 @@ export default class Main extends Component {
       </div>
     );
   }
-};
+}
