@@ -4,7 +4,7 @@ import { Provider } from "preact-redux";
 import store from "./redux/store";
 
 import Main from "./components/main";
-import "./global-style";
+import "./style/global-style.css";
 
 (function(i, s, o, g, r, a, m) {
   i["GoogleAnalyticsObject"] = r;

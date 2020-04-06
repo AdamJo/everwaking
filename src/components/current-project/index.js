@@ -1,5 +1,5 @@
 import { h, Component } from "preact";
-import styles from "./style.sass";
+import styles from "./style.css";
 
 export default class currentProject extends Component {
   shouldComponentUpdate() {
@@ -9,7 +9,7 @@ export default class currentProject extends Component {
   render({ project, projectLink, projectImage }) {
     return (
       <div className={`${styles.currentProject} light on-light`}>
-        <h3>Current Project {this.props}</h3>
+        <h3>Project {this.props}</h3>
         <a
           href={projectLink}
           target="_blank"

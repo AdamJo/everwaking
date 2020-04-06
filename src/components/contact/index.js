@@ -1,5 +1,5 @@
 import { h, Component } from "preact";
-import styles from "./style.sass";
+import styles from "./style.css";
 import pdfFile from "../../assets/Adam_Johannesmeyer_Resume.pdf";
 
 export default class currentProject extends Component {

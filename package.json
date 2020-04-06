@@ -40,8 +40,7 @@
     "if-env": "^1.0.0",
     "jest": "^21.2.1",
     "node-sass": "^4.5.3",
-    "preact-cli": "^2.0.0",
-    "sass-loader": "^6.0.6"
+    "preact-cli": "^2.0.0"
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",

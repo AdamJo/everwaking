@@ -49,7 +49,7 @@ const INITIAL = {
   project: "MiniDota.watch",
   projectLink: "https://minidota.watch",
   projectImage: svgImage,
-  jobTitle: "Web Applications Developer",
+  jobTitle: "Full Stack Developer",
   email: "adam.johannesmeyer@gmail.com"
 };
 

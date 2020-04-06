@@ -1,5 +1,5 @@
 import { h } from "preact";
-import { hobbiesStyle, header, details } from "./style.sass";
+import { hobbiesStyle, header, details } from "./style.css";
 export default function() {
   return (
     <div className={`${hobbiesStyle} light`}>

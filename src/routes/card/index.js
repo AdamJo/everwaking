@@ -3,7 +3,7 @@ import { h, Component } from "preact";
 import Contact from "../../components/contact";
 import CurrentProject from "../../components/current-project";
 
-import { cardStyle, cardInfo, card, wrapper } from "./style.sass";
+import { cardStyle, cardInfo, card, wrapper } from "./style.css";
 
 export default class Card extends Component {
   componentWillUpdate() {
@@ -20,6 +20,7 @@ export default class Card extends Component {
   }
 
   render({ project, projectLink, projectImage, jobTitle, email }) {
+
     return (
       <div className={wrapper}>
         <div
