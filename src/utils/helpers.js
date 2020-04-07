@@ -12,7 +12,7 @@ export const _random = (min, max) =>
  * normalizes a given value to a new set of min/max.
  * convert processing map to javascript
  * http://stackoverflow.com/questions/20910091/recreating-the-processing-map-function-in-javascript
- * 
+ *
  * @param  {number} value  - initial number to be normalized
  * @param  {number} start1 - initial min param size of value given
  * @param  {number} stop1  - initial max param size of value given

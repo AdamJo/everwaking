@@ -20,7 +20,6 @@ export default class Card extends Component {
   }
 
   render({ project, projectLink, projectImage, jobTitle, email }) {
-
     return (
       <div className={wrapper}>
         <div

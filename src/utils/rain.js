@@ -29,7 +29,7 @@ export default class Rain {
   // loop through drops and create animation
   draw() {
     this.ctx.clearRect(0, 0, this.width, this.height); // clear canvas
-    this.drops.forEach(drop => {
+    this.drops.forEach((drop) => {
       drop.fall();
       let { x, y, len, thickness, color, lightness } = drop.show();
       this.ctx.beginPath();

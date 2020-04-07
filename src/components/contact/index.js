@@ -14,11 +14,12 @@ export default class currentProject extends Component {
           <li>
             <b>{email}</b>
           </li>
+          <li>{jobTitle}</li>
           <li>
-            {jobTitle}
-          </li>
-          <li>
-            <a className="on-light-link" href={pdfFile}>Resume</a>{" - "}
+            <a className="on-light-link" href={pdfFile}>
+              Resume
+            </a>
+            {" - "}
             <a
               className="on-light-link"
               href="https://github.com/adamjo"

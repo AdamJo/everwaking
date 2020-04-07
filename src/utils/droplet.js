@@ -68,7 +68,7 @@ export default class Droplet {
       len: this.y + this.len,
       thickness: this.thickness,
       color: this.color,
-      lightness: this.lightness
+      lightness: this.lightness,
     };
   }
 }

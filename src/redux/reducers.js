@@ -1,5 +1,5 @@
 const EMPTY = {};
 
-export default store => {
+export default (store) => {
   return store || EMPTY;
 };

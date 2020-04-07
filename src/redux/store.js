@@ -19,14 +19,14 @@ let ACTIONS = {
     return {
       ...state,
       windowWidth,
-      windowHeight
+      windowHeight,
     };
   },
   ON_MOUSE_MOVE: (state = {}, { mouseX, mouseY }) => {
     return {
       ...state,
       mouseX,
-      mouseY
+      mouseY,
     };
   },
   ON_RESET_RAIN: (state = {}, action) => {
@@ -38,7 +38,7 @@ let ACTIONS = {
     RAIN.setup(state.windowWidth, state.windowHeight);
     RAIN.draw();
     return { ...state };
-  }
+  },
 };
 
 const INITIAL = {
@@ -50,7 +50,7 @@ const INITIAL = {
   projectLink: "https://minidota.watch",
   projectImage: svgImage,
   jobTitle: "Full Stack Developer",
-  email: "adam.johannesmeyer@gmail.com"
+  email: "adam.johannesmeyer@gmail.com",
 };
 
 export default createStore(
